@@ -1,13 +1,12 @@
-# MultiMind
+# MultiMind 智能客服运行平台
 
-MultiMind is a customer-service agent runtime for e-commerce support. It classifies user requests, routes them to specialist agents, retrieves relevant knowledge when needed, and coordinates multi-agent responses. The platform also provides session memory, tool controls, runtime traces, and quality evaluation hooks.
+MultiMind 是一个面向电商客服场景的多 Agent 智能客服运行平台。系统从用户请求出发，完成意图识别与风险判断，将问题路由至专业 Agent；需要时通过知识检索补充上下文，并由编排器协调多个 Agent 形成统一答复。平台同时提供会话记忆、工具调用控制、运行追踪与质量评测能力。
 
-## Core technologies
+## 核心技术
 
-- Python and FastAPI for the service API
-- LLM, embeddings, and rule-based intent recognition
-- Multi-agent orchestration with specialist routing and response composition
-- Retrieval-augmented generation with query rewriting, parallel retrieval, deduplication, and reranking
-- Redis and ChromaDB-backed conversation and knowledge services
-- Vue for the operator interface
-- Docker for runtime packaging
+- **意图识别与路由**：结合大语言模型、Embedding 相似度和规则匹配，识别用户意图、紧急度及业务实体。
+- **多 Agent 编排**：支持专业 Agent 路由、跨领域并行协作、失败降级与统一回复合成。
+- **RAG 知识检索**：支持查询改写、多路并行召回、结果去重与重排。
+- **记忆与工具管理**：使用 Redis 与 ChromaDB 管理会话记忆和知识数据；工具调用包含参数校验、超时、熔断与缓存。
+- **运行时与可观测性**：提供预算控制、事件 Trace、回放、监控与离线质量评测。
+- **技术栈**：Python、FastAPI、Vue、Redis、ChromaDB、Docker 及兼容 Anthropic API 的大语言模型。
